@@ -48,6 +48,7 @@ route.post("/api/addProduct",async(req,res,next)=>{
         const available = req.body.available;
         const SKU = req.body.SKU;
         const company = req.body.company;
+        const color = req.body.color;
         const images = req.body.images;
 
         await product.create({
@@ -59,6 +60,7 @@ route.post("/api/addProduct",async(req,res,next)=>{
             available: available,
             SKU: SKU,
             company: company,
+            color: color,
             images: images
         });
         res.send("product added");
