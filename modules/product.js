@@ -46,6 +46,10 @@ const productSchema = new Schema(
         category:{
             type: Array,
             required: true
+        },
+        shipping:{
+            type: Number,
+            required: true
         }
     },
     {
