@@ -50,6 +50,7 @@ route.post("/api/addProduct",async(req,res,next)=>{
         const company = req.body.company;
         const color = req.body.color;
         const images = req.body.images;
+        const category = req.body.category;
 
         await product.create({
             name: name,
@@ -61,7 +62,8 @@ route.post("/api/addProduct",async(req,res,next)=>{
             SKU: SKU,
             company: company,
             color: color,
-            images: images
+            images: images,
+            category: category
         });
         res.send("product added");
 
