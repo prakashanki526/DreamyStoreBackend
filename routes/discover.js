@@ -59,4 +59,19 @@ route.get("/api/getProducts",(req,res,next)=>{
     }
 })
 
+route.get("/api/productDetails/:productId",(req,res,next)=>{
+    try {
+        product.findOne({_id: req.params.productId},(err,found)=>{
+            if(found){
+                res.send(found);
+            } else{
+                res.send(false);
+            }
+        })
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+})
+
 module.exports = route;
